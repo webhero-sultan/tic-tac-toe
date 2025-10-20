@@ -6,10 +6,6 @@ export default function Square() {
     setValue('X');
   }
   return (
-    <button onClick={handleClick} className="h-12 w-12 border
-                                          text-amber-50
-                                            cursor-pointer
-                                            font-bold
-                                            ">{value}</button>
+    <button onClick={handleClick} className="h-20 w-20 border-2 text-white text-5xl cursor-pointer glow-blue border-white glow-border rounded-2xl">{value}</button>
   )
 }
