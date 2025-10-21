@@ -4,9 +4,19 @@ import Square from "./Square";
 
 export default function Board() {
   const [squares, setSquares] = useState([]);
+  const [xIsNext, setXIsNext] = useState(true);
   function handleClick(i) {
+    // if(squares[i]=='X' || squares[i]== 'O') return;
+    if(squares[i]) return; // short form of the above line =====
     const nextSquares = squares.slice(); // clone squares =====
-    nextSquares[i] = 'X'; // set the value of index 0 =====
+    if (xIsNext) nextSquares[i] = 'X';
+    else nextSquares[i] = 'O';
+
+    // if(xIsNext) setSquares(false);
+    // else setSquares(true);
+
+    setXIsNext(!xIsNext);
+
     setSquares(nextSquares); // update value =====
   }
   return (
